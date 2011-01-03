@@ -1,0 +1,14 @@
+<%-form_for:data,:url=>{:action=>"save"} do |f|%>
+<center><h1><font color="green"><%=@post.title%></font></h1><h2><font color="green"><%=@post.description%></font></h2><br></center>
+
+<%=hidden_field_tag'id',@post.id%><font color="green">
+	<%=f.label :"Name"%></font>
+	<%=f.text_field :name%><br>
+<font color="green"><%=f.label :"Comment"%></font><br>
+	<%=f.text_area :comment%><br>
+	<%=f.submit :"Add"%>
+<%end%>
+<script type="text/javascript">
+alert("please enter the valid input")
+</script>	
+

@@ -1,0 +1,21 @@
+<table align="right"><tr><td><%= link_to "click here=>Write new post",:controller=>"blogs", :action=>"new_post"%></td></tr>
+<tr><td><%= link_to "click here=>View posts",:controller=>"blogs", :action=>"show_post"%></td></tr></table>
+<%= will_paginate @comments%>
+<center><h1><font color="green"><%=@post.title%></font></h1><br>
+<h2><font color="green"><%=@post.description%></font></h2><br><br><br>
+<%if @q == 0 then%>
+	<%= "It Has No Comments" %>
+<%else%>
+<table>
+
+<tr><th><font color="green">Name</font></th><td></td><td></td><td></td><td></td><td></td><th><font color="green" >Comment</font></th></tr>
+<%@comments.each do |i|%>
+<tr>
+<td><font color="green">
+<%=i.name%></font></td><td></td><td></td><td></td><td></td><td></td>
+<td><font color="green"><%=i.comment%></font></td>
+</tr>
+<%end%>
+<%end%><table align="bottom"><tr><td>
+<center><%= link_to "click here=>Write comment",:id=>@post.id,:controller=>"blogs", :action=>"adding"%></td></tr></table>
+

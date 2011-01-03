@@ -1,0 +1,15 @@
+
+<table align="right"><tr><td><%= link_to "Write new post",:controller=>"blogs", :action=>"new_post"%></td></tr>
+</table>
+<table>
+<tr>
+<th><center><h2><font color="green">Your friend post some title...</font></h2><td><font color="purple">Click the link and view it</font></td></center></th>
+<th></th>
+</tr>
+<% @posts.each do |post| %>
+<tr>
+<td><h4><font color="green"> <%= post.title%> </font></h4></td> 
+<td><font color="blue"><%= link_to "View & Write Comments",:id=>post.id,:controller=>"blogs", :action=>"expand_post"%></font></td>
+</tr>
+<%end%>
+</table>

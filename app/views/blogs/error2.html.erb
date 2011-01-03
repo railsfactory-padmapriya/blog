@@ -1,0 +1,11 @@
+<%-form_for :data, :url=>{:action=>"index"} do |f| %>
+<%=f.label :"User Name" %><br>
+<%=f.text_field :username%><br>
+<%=f.label :"Pass Word"%><br>
+<%=f.text_field :password%><br>
+<%=f.submit :"Login"%>
+<%-end%><table>
+<tr><td><%= link_to " click here=>Sign Up",:controller=>"blogs", :action=>"signup"%></td></tr></table>
+<script type="text/javascript">
+alert("UserName PassWord doesn't match / Enter the valid data")
+</script>

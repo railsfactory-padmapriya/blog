@@ -1,0 +1,5 @@
+<%-form_for :data, :url=>{:action=>"expand_post"} do |f|%>
+<%=hidden_field_tag 'id',@q%>
+<h1><font color="green">Comment Successfully Added</font>
+<%=f.submit :"ok"%></h1>
+<%end%>
